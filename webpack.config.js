@@ -64,10 +64,10 @@ module.exports = {
       template: './src/templates/index.pug',
       filename: 'index.html',
     }),
-    new HtmlWebpackPlugin({
-      template: './src/templates/access.pug',
-      filename: 'access.html',
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: './src/templates/access.pug',
+    //   filename: 'access.html',
+    // }),
     new CleanWebpackPlugin(),
   ],
 }
