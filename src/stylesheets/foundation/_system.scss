@@ -1,0 +1,181 @@
+
+@charset "UTF-8";
+
+
+
+// ---------- プライマリーカラー ----------
+$primary:#76D3E9;
+
+// ---------- 白、黒、グレー系 ----------
+$c-black_272: #272727;
+$c-black_1a1:#1a1a1a;
+$c-white_f8f: #F8F8F8;
+$c-white_fff:#ffffff;
+$c-white_f0f:#f0f0f0;
+$c-gray_c6c: #C6C6C6;
+$c-gray_e6e:#e6e6e6;
+$c-gray_eee: #eeeeee;
+$c-gray_404:#404040;
+//----------------------------
+
+
+$c-white_fff:#ffffff;
+$c-lightGray: #efefef;
+$c-black_272: #272727;
+$c-yellow_e5a:#e5a61e;
+$c-pink_faf:#faf3f0;
+
+
+$c-primary: #d7091b;
+
+$c-body-white: $c-white_fff;
+$c-body-black: $c-black_272;
+
+$c-base-white: $c-white_fff;
+$c-base-lightGray: $c-lightGray;
+$c-base-black: $c-black_272;
+
+$c-blue_036:#0364cf;
+
+$c-body-black:$c-black_272;
+// ---------- その他 ----------
+
+
+// ---------- gutter ----------
+$gutter-x: 2.4rem;
+$gutter-y:4rem;
+// ---------- space ----------
+
+  $space:1.8rem;
+
+// transition
+// ---------------------
+@mixin transition-base($second: 0.4s) {
+  transition: all $second;
+}
+
+// content max-width
+// ---------------------
+@mixin content-maxwidth($px: 751px) {
+  max-width: $px;
+}
+
+// Google Font Awesome
+// ---------------------
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+// responsive system
+// ---------------------
+@mixin breakpoint($point) {
+  @if $point == msp{
+      @media (max-width: 376px) {
+          @content;
+      }
+  }
+  @if $point == sp{
+      @media (max-width: 480px) {
+          @content;
+      }
+  }
+  @if $point == tablet {
+      @media (max-width: 768px) {
+          @content;
+      }
+  }
+  @if $point == pc {
+      @media (min-width: 769px) {
+          @content;
+      }
+  }
+  @if $point == lpc {
+      @media (min-width: 890px) {
+          @content;
+      }
+  }
+}
+
+.pc-only {
+  display: none;
+}
+
+@include breakpoint(tablet) {
+}
+
+@include breakpoint(pc) {
+  .pc-only {
+      display: inline-block;
+  }
+}
+
+
+// ---------- フレックス ----------
+@mixin flex{
+  // display: -webkit-box;
+  // display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+// ---------- 背景画像 ----------
+@mixin bgi{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+// ---------- フォント（追記変更可能） ----------
+@mixin noto__sans{
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+@mixin sidebar__ttl{
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  line-height: 1.45;
+  
+}
+
+@mixin flexBody-50 {
+  max-width: 100%;
+  margin-top: $gutter-y;
+  flex: 0 0 auto;
+  width: 50%;
+  padding: 0rem calc($gutter-x * .5);
+  @include breakpoint(tablet) {
+    width: 100%;
+  }
+}
+@mixin flexBody-25 {
+  max-width: 100%;
+  margin-top: $gutter-y;
+  flex: 0 0 auto;
+  width: 25%;
+  padding: 0rem calc($gutter-x * .5);
+  @include breakpoint(tablet) {
+    width: 50%;
+  }
+}
+
+@mixin animation(
+  $name,
+  $duration: 1s,
+  $timing-function: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction:normal,
+  $fill-mode : forwards
+) {
+  animation: {
+  name: $name;
+  duration:$duration;
+  timing-function: $timing-function;
+  delay:$delay;
+  iteration-count:$iteration-count;
+  direction:$direction;
+  fill-mode:$fill-mode;
+  }
+}
+
+

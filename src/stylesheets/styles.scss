@@ -1,0 +1,13 @@
+// ──────────────────────────────
+// foundation
+// ──────────────────────────────
+@use "./foundation/reset";
+@use "./foundation/system";
+@use "./foundation/base";
+
+// ──────────────────────────────
+// layout
+// ──────────────────────────────
+@use "./layout/header";
+@use "./layout/front-page";
+@use "./layout/footer";

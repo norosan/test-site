@@ -13,16 +13,20 @@ module.exports = {
   module: {
     rules:[
       {
-        test: /\.css/,
+        test: /\.(css|sass|scss)/,
         use:[
           {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-          loader: 'css-loader',
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
           },
         ],
       },
+     
       {
       test: /\.(png|jpeg|jpg)/,
       //ここはwebpack5の場合以下を追記,use以下は削除する(file-loader,url-loaderは不要なので削除できるnpm uninstall file-loader url-loadr)

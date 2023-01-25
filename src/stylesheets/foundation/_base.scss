@@ -1,0 +1,84 @@
+/* base
+--------------------------- */
+@use "./system" as *;
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    line-height: 2;
+    height: 100%;
+    overflow:scroll;
+    scroll-behavior: smooth;
+    @include breakpoint(tablet) {
+        line-height: 1.8;
+    }
+}
+body {
+    color: $c-body-black;
+    background-color: $c-white_f8f;
+    font-size: 1.6rem;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans",sans-serif;
+    font-weight: 400;
+    letter-spacing: .025em;
+    // max-width: 100vw;
+    // min-width: 350px;
+    width: 100%;
+   
+}
+.container {
+    width: 100%;
+    @include content-maxwidth();
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+    margin: 0 auto;
+  
+      
+    }
+.container.-tight {
+    @include content-maxwidth(751px);
+
+}
+
+
+
+// ::selection {
+//     background-color: rgba($color: $c-base-black, $alpha: 0.7);
+//     color: $c-body-white;
+// }
+
+img,
+video,
+object {
+    max-width: 100%;
+    height: auto;
+    border: none;
+    display: block;
+}
+// a {
+//     color: #1ca9e3;
+//     text-decoration: underline;
+//     position: relative;
+
+//     &:hover {
+//         text-decoration: none;
+//     }
+// }
+a:hover img {
+    text-decoration: none;
+    opacity: 0.8;
+    @include transition-base();
+}
+a,
+label,
+input,
+button {
+    @include transition-base();
+}

@@ -1,0 +1,18 @@
+/* l-header
+--------------------------- */
+@use "./../foundation/system" as *;
+
+.header {
+  padding: 2.5rem .9rem 2.5rem 3rem;
+
+  &__wrapper {
+    @include flex;
+  
+  }
+  &__logo {
+    width: 292px;
+    height: 33px;
+  }
+
+
+}
